@@ -1,0 +1,20 @@
+<div fxLayoutGap="14px" fxLayout="row" fxLayout.xs="column">
+  <mat-card>
+    <mat-card-content>
+      <div *ngIf="currentUser">
+        <h1>Hi {{currentUser.username}}!</h1>
+        <p>You're logged!!</p>
+        <p>
+          <a [routerLink]="['/login']">Logout</a>
+        </p>
+
+      </div>
+      <div *ngIf="!currentUser">
+        <h1>Hi Unknown visitor</h1>
+        <p>
+          <a [routerLink]="['/login']">Login / Register</a>
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,75 @@
+<div fxLayout="row" fxLayoutGap="1%">
+  <mat-card>
+    <mat-card-title color="primary">Create a Product</mat-card-title>
+    <mat-card-content>
+      <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+        <div fxLayout="column">
+
+          <mat-form-field hintLabel="Max 10 characters">
+            <input matInput [(ngModel)]="product.name" maxlength="20" required #name="ngModel" name="name" placeholder="Product name">
+            <mat-hint align="end">{{product.name?.length || 0}}/10</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="product.price" required type="number" name="price" placeholder="Product price">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="product.quantity" required type="number" name="quantity" placeholder="Stock quantity for this product">
+          </mat-form-field>
+
+          <button [disabled]="!productForm.valid" mat-raised-button type="submit">Add Product</button>
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="table-card">
+    <mat-card-title>
+
+    </mat-card-title>
+    <mat-card-content>
+    <div class="example-header">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+      </div>
+      <mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.name }}</mat-cell>
+        </ng-container>
+
+        <!-- Year Column -->
+        <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.price }}</mat-cell>
+        </ng-container>
+
+        <!-- Year Column -->
+        <ng-container matColumnDef="quantity">
+          <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.quantity }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
