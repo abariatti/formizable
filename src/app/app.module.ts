@@ -23,7 +23,10 @@ import { AlertService } from './services/alert.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { ProductComponent } from './pages/product/product.component';
-
+import { NgDynamicFormsComponent } from './pages/ng-dynamic-forms/ng-dynamic-forms.component';
+import { DynamicFormsCoreModule } from '@ng-dynamic-forms/core';
+import { DynamicFormsMaterialUIModule } from '@ng-dynamic-forms/ui-material';
+import { NgDynamicFormsService } from './pages/ng-dynamic-forms/ng-dynamic-forms.service';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProfileComponent,
     AboutComponent,
     ProductComponent,
+    NgDynamicFormsComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppMaterialModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    ThemePickerModule
+    ThemePickerModule,
+    DynamicFormsCoreModule.forRoot(),
+    DynamicFormsMaterialUIModule,
   ],
   providers: [
     AuthGuard,
@@ -67,7 +73,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useClass: ParseInterceptor,
         multi: true
     },
+    NgDynamicFormsService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -183,6 +183,14 @@
   dependencies:
     tslib "^1.7.1"
 
+"@ng-dynamic-forms/core@^5.4.7":
+  version "5.4.7"
+  resolved "https://registry.yarnpkg.com/@ng-dynamic-forms/core/-/core-5.4.7.tgz#203dffe4bb31a3599e906990ad9dc2b35714e37a"
+
+"@ng-dynamic-forms/ui-material@^5.4.7":
+  version "5.4.7"
+  resolved "https://registry.yarnpkg.com/@ng-dynamic-forms/ui-material/-/ui-material-5.4.7.tgz#5945f96d68d516fab98e046be776cb05fe2aa202"
+
 "@ngtools/json-schema@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.2.0.tgz#06e5ecd29e9a37d260a447dd873ea2becd228c4f"
@@ -434,6 +442,12 @@ amqplib@^0.5.2:
     buffer-more-ints "0.0.2"
     readable-stream "1.x >=1.1.9"
     safe-buffer "^5.0.1"
+
+angular2-text-mask@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/angular2-text-mask/-/angular2-text-mask-8.0.5.tgz#e08ad1c1898e9468a6d6983cbf1c83289d5e654d"
+  dependencies:
+    text-mask-core "^5.0.0"
 
 ansi-align@^2.0.0:
   version "2.0.0"
@@ -7966,6 +7980,10 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
+text-mask-core@^5.0.0:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/text-mask-core/-/text-mask-core-5.0.2.tgz#7f5f70bec9d21b5779da3540114baec50eba8313"
+
 through2@^0.6.3:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"
@@ -8199,7 +8217,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@~2.6.2, typescript@~2.6.9:
+typescript@~2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 

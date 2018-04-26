@@ -1,3 +1,4 @@
+import { NgDynamicFormsComponent } from './pages/ng-dynamic-forms/ng-dynamic-forms.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]  },
   { path: 'products', component: ProductComponent, canActivate: [AuthGuard]  },
+  { path: 'ng-dynamic-forms', component: NgDynamicFormsComponent },
 ];
 
 @NgModule({
