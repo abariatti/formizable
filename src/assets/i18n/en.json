@@ -1,0 +1,9 @@
+{
+    "TITLE": "Formizable",
+    "PAGES": {
+        "HOME": {
+            "MENU": "Home",
+            "CONTENT": "Home works!"
+        }
+    }
+}
