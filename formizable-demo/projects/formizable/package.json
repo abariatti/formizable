@@ -1,0 +1,11 @@
+{
+  "name": "formizable",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@ng-dynamic-forms/core": "^6.0.5",
+    "@ng-dynamic-forms/ui-material": "^6.0.5",
+    "reflect-metadata": "^0.1.12"
+  }
+}

@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit($event)" [formGroup]="formGroup">
+
+  <app-mat-dynamic-form-group [questions]="questions" [formGroup]="formGroup"></app-mat-dynamic-form-group>
+
+  <div class="form-row submit-row" *ngIf="questions.length > 0">
+    <button [disabled]="!formGroup.valid" mat-raised-button type="submit">{{ submitText || 'Sign up'}}</button>
+  </div>
+
+</form>

@@ -1,0 +1,39 @@
+<!-- Question Array -->
+<div [formGroup]="formGroup">
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h4>{{ question.label }}</h4>
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ question.description }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button mat-mini-fab type="button" (click)="addItem()">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <div [formArrayName]="question.key">
+
+      <div *ngFor="let item of question.items; let idx=index">
+
+        <h5>
+          {{ question.label }} #{{idx+1}}
+          <button mat-mini-fab color="warn" type="button" (click)="removeItem(idx)">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </h5>
+
+        <app-mat-dynamic-form-group [questions]="question.items[idx]" [formGroup]="formGroup.controls[question.key].controls[idx]"></app-mat-dynamic-form-group>
+
+      </div>
+
+    </div>
+
+  </mat-expansion-panel>
+
+</div>
+

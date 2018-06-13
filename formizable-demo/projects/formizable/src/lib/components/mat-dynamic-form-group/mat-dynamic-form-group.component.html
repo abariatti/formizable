@@ -1,0 +1,31 @@
+<!-- Question Group -->
+<div [formGroup]="formGroup">
+  <div *ngFor="let question of questions" class="form-row">
+
+    <div [ngSwitch]="question.controlType">
+
+      <app-mat-dynamic-form-array *ngSwitchCase="'array'" [question]="question" [formGroup]="formGroup" >
+      </app-mat-dynamic-form-array>
+
+      <mat-expansion-panel *ngSwitchCase="'group'">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ question.label }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ question.description }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-mat-dynamic-form-group [label]="question.label || question.key" [questions]="question.questions"
+          [formGroup]="formGroup.controls[question.key]">
+        </app-mat-dynamic-form-group>
+      </mat-expansion-panel>
+
+      <app-mat-dynamic-form-question *ngSwitchDefault [question]="question" [formGroup]="formGroup">
+      </app-mat-dynamic-form-question>
+
+    </div>
+
+  </div>
+</div>
